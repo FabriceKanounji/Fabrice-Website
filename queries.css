@@ -1,0 +1,260 @@
+/* 1120 px */
+@media (max-width: 69em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .projects-gallery-img {
+    height: 18rem;
+    width: 30rem;
+  }
+
+  .projects-heading {
+    margin-bottom: 8rem;
+  }
+
+  .study {
+    margin-top: 5rem;
+  }
+
+  .projects-heading-secondary {
+    margin-bottom: 1.8rem;
+  }
+}
+
+/* 928 px */
+@media (max-width: 58em) {
+  html {
+    font-size: 50%;
+  }
+
+  .projects-heading {
+    margin-bottom: 12rem;
+  }
+
+  .study {
+    margin-top: 8rem;
+  }
+}
+
+/* 832 px */
+@media (max-width: 52em) {
+  .projects-heading {
+    margin-bottom: 6rem;
+  }
+
+  .study {
+    margin-top: 6rem;
+  }
+
+  .projects-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+  }
+
+  .tabbed-component-container {
+    margin: 8.5rem 1rem;
+  }
+}
+
+/* 800 px */
+@media (max-width: 50em) {
+  .hero-text-box {
+    max-width: 40rem;
+  }
+
+  .heading-primary-hidden-home {
+    opacity: 0;
+    /* margin-top: 5rem; */
+    transition: all 4s;
+    transform: translateY(5rem);
+    animation: revealHeading 2s ease 3.2s forwards;
+  }
+
+  @keyframes revealHeading {
+    to {
+      opacity: 1;
+      transform: translateY(2rem);
+    }
+  }
+
+  .form-input {
+    width: 60rem;
+  }
+
+  .form-container {
+    margin: 3.5rem 2.4rem;
+    padding: 7.5rem 2.4rem 7.5rem 2.4rem;
+  }
+}
+
+/* 672 px */
+@media (max-width: 42em) {
+  .multi-grid-text {
+    font-size: 4.2rem;
+  }
+}
+
+/* 624 px */
+@media (max-width: 39em) {
+  /* Deze twee moeten op de een of andere manier alleen als je op de projects pagina zit of op contact of about.
+  
+  Sowieso met JS en ik denk met insertadjacent HTML*/
+  /* .section-projects-real {
+    height: fit-content;
+  }
+
+  .slider {
+    overflow: visible;
+  } */
+  /* ///////////////////////////// */
+  .projects-heading-secondary {
+    text-align: center;
+    margin-bottom: 2.6rem;
+  }
+
+  .projects-heading {
+    margin-bottom: 6rem;
+  }
+
+  .study {
+    margin-top: 6rem;
+  }
+
+  .projects-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+    margin-bottom: 2.6rem;
+  }
+
+  .tabbed-component-container {
+    margin: 1rem 1rem;
+
+    background-color: #fff;
+  }
+
+  .tabbed-content {
+    display: none;
+    padding: 0.5rem 5rem 6.5rem 5rem;
+  }
+
+  .tabbed-text {
+    font-family: "Rubik", sans-serif;
+    color: #555;
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+  }
+
+  .tabbed-content--active {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 3rem;
+    row-gap: 0.5rem;
+    align-items: center;
+  }
+
+  .tabbed-icon {
+    height: 18rem;
+    width: 18rem;
+    border-radius: 20px;
+    align-self: center;
+    justify-self: center;
+    margin-bottom: 2rem;
+  }
+
+  .tab {
+    margin-right: 0;
+  }
+
+  .tab-container {
+    margin-left: 0;
+    padding: 0 5rem;
+    justify-content: space-between;
+  }
+
+  .form-input {
+    width: 50rem;
+  }
+}
+
+/* 544 px */
+@media (max-width: 34em) {
+  .text-responsive {
+    transform: scale(0.8) translate(5rem, 7rem);
+  }
+
+  .text-oop {
+    transform: scale(1.2) translate(15rem, 2.5rem);
+  }
+
+  .text-functional {
+    transform: scale(1) translate(-10rem, 0);
+  }
+
+  .text-seo {
+    transform: scale(0.7) translate(-10rem, 20rem);
+  }
+
+  .text-js {
+    transform: scale(0.9) translate(-8rem, -10rem);
+  }
+}
+
+/* 528 px */
+@media (max-width: 33em) {
+  .form-container {
+    margin: 3.5rem 2.4rem;
+    padding: 2.4rem 2.4rem;
+  }
+
+  .form {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .form-icon {
+    height: 15rem;
+    width: 15rem;
+  }
+
+  .form input,
+  .form select {
+    width: 30rem;
+  }
+
+  .form--1-2 {
+    align-items: center;
+    justify-self: center;
+    padding-top: 0;
+    padding-right: 0;
+    /* width: 50rem; */
+  }
+
+  .form-input {
+    width: 40rem;
+  }
+}
+
+/* 432 px */
+@media (max-width: 27em) {
+  .form input,
+  .form select {
+    width: 28rem;
+  }
+
+  .form-input {
+    width: 28rem;
+  }
+
+  .tab {
+    padding: 1.25rem 1.5rem;
+  }
+}
