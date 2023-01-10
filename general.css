@@ -1,7 +1,6 @@
 .heading-primary,
 .heading-secondary,
 .heading-tertiary {
-  /* font-weight: 700; */
   font-weight: 500;
   letter-spacing: -0.5px;
 }
@@ -16,9 +15,3 @@
   font-size: 5.2rem;
   line-height: 1.05;
 }
-
-/* .container {
-  max-width: 120rem;
-  padding: 0 3.2rem;
-  margin: 0 auto;
-} */

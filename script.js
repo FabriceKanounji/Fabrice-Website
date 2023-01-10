@@ -1,7 +1,5 @@
 "use strict";
 
-// Algemeen
-
 //Nodig voor mediaqueries
 
 const inactive = document.querySelectorAll(".inactive");
@@ -26,7 +24,6 @@ const slide = document.querySelectorAll(".slide");
 const sectionHero = document.querySelector(".section-hero");
 const sectionHeroLoaded = document.querySelector(".section-hero-loaded");
 
-// const phrases = ["Welkom op de front-end developer portfolio van"];
 const phrases = ["Hoi, ik ben Fabrice."];
 
 let i = 0; // array element
@@ -56,10 +53,6 @@ function loop() {
     textDisplay.innerHTML = "";
     textDisplay.innerHTML = `<span class="hoi">Hoi</span>, ik ben <span class="fabrice">Fabrice</span>.`;
 
-    // textDisplay.innerHTML = `<span class="hoi">
-    // <span class="A">H</span><span class="B">o</span><span class="C">i</span>
-    // </span>, ik ben <span class="fabrice">Fabrice</span>.`;
-
     const hoi = document.querySelector(".hoi");
     const hoi2 = document.querySelector(".hoi2");
     const fabrice = document.querySelector(".fabrice");
@@ -75,10 +68,6 @@ function loop() {
         name.style.color = "#66d9e8";
         name.classList.add("bounce");
 
-        // if (e.target.classList.contains("contact")) {
-        //   hoi.style.color = "#66d9e8";
-        // }
-
         if (e.target.classList.contains("about")) {
           fabrice.style.color = "#66d9e8";
         }
@@ -92,8 +81,6 @@ function loop() {
         name.classList.remove("bounce");
         fabrice.style.color = "#fff";
         fabrice2.style.color = "#fff";
-        // hoi.style.color = "#fff";
-        // contact.style.color = "#fff";
         about.style.color = "#fff";
         about2.style.color = "#fff";
       });
@@ -206,12 +193,6 @@ const colorHover = function (name) {
     projects2.style.color = "#fff";
     portfolio.style.color = "#fff";
     portfolio2.style.color = "#fff";
-
-    // if (name.style.color === "#fff") {
-    //   contact.style.color = "#fff";
-    //   about.style.color = "#fff";
-    //   projects.style.color = "#fff";
-    // }
   });
 };
 
@@ -230,6 +211,7 @@ const slideHomeAbout = document.querySelector(".slide--home-about");
 const slideAbout = document.querySelector(".slide--about");
 const slideContact = document.querySelector(".slide--contact");
 const sectionHomeProjects = document.querySelector(".section-home-projects");
+
 // Slider from home to projects
 
 projects.addEventListener("click", function () {
@@ -237,7 +219,6 @@ projects.addEventListener("click", function () {
   currentPage1Const = document.querySelector(`${currentPage1Var}`);
   currentPage1Const.classList.remove("inactive");
   slideHomeProjects.classList.remove("inactive");
-  // homeLoaded();
 
   console.log(currentPage1Const);
 
@@ -268,7 +249,6 @@ projects2.addEventListener("click", function () {
   currentPage1Const = document.querySelector(`${currentPage1Var}`);
   currentPage1Const.classList.remove("inactive");
   slideHomeProjects.classList.remove("inactive");
-  // homeLoaded();
 
   console.log(currentPage1Const);
 
@@ -322,8 +302,6 @@ about.addEventListener("click", function () {
       failsafe = 1;
     }
   }, 5800);
-
-  // setTimeout(projectsAnimation, 6100);
 });
 
 about2.addEventListener("click", function () {
@@ -348,18 +326,12 @@ about2.addEventListener("click", function () {
       failsafe = 1;
     }
   }, 6100);
-
-  // setTimeout(projectsAnimation, 6100);
 });
 
 const toAbout = function () {
   slideHomeAbout.style.transform = "translateX(-100%)";
   slideAbout.style.transform = "translate(0%)";
 };
-
-// WAAROM DOET IE HET NIET ALS JE DE EERSTE KEER OP CONTACT DRUKT
-// MAAR ALS JE VANAF CONTACT OP HOME DRUKT EN DAN WEER OP CONTACT,
-// DAN WEL?!
 
 // Slider from home to contact
 contact.addEventListener("click", function () {
@@ -414,6 +386,7 @@ contact2.addEventListener("click", function () {
 ////////////////// TO WORK ON homeProjects Page //////////////////////
 
 ////////////////////////////////////////////////////////////////////////////
+
 // homeProjects Text animation
 
 const textAsync = document.querySelectorAll(".text-async");
@@ -496,9 +469,6 @@ function homeProjectsTextAnimation() {
       );
     }, 6000);
   } else {
-    //////////////// ELSE ELSE ELSE ///////////////////
-    /////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////
     textAsync.forEach(
       (e) => (e.style.transform = "scale(0.6) translate(-20rem, 5rem)")
     );
@@ -631,37 +601,6 @@ const homeProjectsTextAnimation2 = function () {
   }, 6000);
 };
 
-// const homeProjectsTextAnimationReset = function () {
-//   textAsync.forEach((e) => (e.style.transform = "scale(1  ) translate(0)"));
-//   textCSS.forEach((e) => (e.style.transform = "scale(0.7) translate(0)"));
-//   textResponsive.forEach(
-//     (e) => (e.style.transform = "scale(0.8) translate(-7rem, 7rem)")
-//   );
-//   textFunctional.forEach((e) => (e.style.transform = "scale(1) translate(0)"));
-//   textBabel.forEach(
-//     (e) => (e.style.transform = "scale(0.8) translate(0, 3rem)")
-//   );
-//   textSEO.forEach(
-//     (e) => (e.style.transform = "scale(0.7) translate(0, 20rem)")
-//   );
-//   textSemantic.forEach(
-//     (e) => (e.style.transform = "scale(0.6) translate(0, 5rem)")
-//   );
-//   textHTML.forEach(
-//     (e) => (e.style.transform = "scale(0.6) translate(10rem, -5rem)")
-//   );
-//   textOOP.forEach((e) => (e.style.transform = "scale(1.2) translate(0, 5rem)"));
-//   textParcel.forEach(
-//     (e) => (e.style.transform = "scale(0.8) translate(-7rem, -7rem)")
-//   );
-//   textJS.forEach(
-//     (e) => (e.style.transform = "scale(0.9) translate(-1rem, -10rem)")
-//   );
-//   textES6.forEach(
-//     (e) => (e.style.transform = "scale(1) translate(10rem, 0rem)")
-//   );
-// };
-
 ////////////////////////////////////////////////////////////////////////////
 // Projects Turn and Expand Animation
 
@@ -716,7 +655,6 @@ const projectsAnimation = function () {
     projectsContainer.style.width = "100vw";
     document.querySelector(".heading-test-2").style.marginTop = "6.8rem";
     document.querySelector(".heading-test-2").style.fontSize = "5.6rem";
-    // document.querySelector(".section-projects-real").style.display = "block";
   }, 1100);
 
   setTimeout(() => {
@@ -729,8 +667,6 @@ const projectsAnimation = function () {
     opacity.forEach((e) => (e.style.opacity = "1"));
 
     sectionHomeProjects.style.visibility = "hidden";
-
-    // document.querySelectorAll("opacity").style.opacity = "1";
   }, 2165);
 };
 
@@ -765,7 +701,6 @@ projectsToHomeBtn.addEventListener(
       slideHomeAbout.classList.remove("inactive");
       slideHomeProjects.classList.remove("inactive");
       currentPage1Const.classList.remove("inactive");
-      // homeLoaded();
     }
 
     slideHome.classList.remove("trans-3s");
@@ -775,6 +710,7 @@ projectsToHomeBtn.addEventListener(
     slideHome.style.transform = "translateX(0)";
     slideHomeProjects.style.transform = "translate(-100%, 0)";
     slideProjects.style.transform = "translateY(-100%)";
+
     // Projects page reset
     projectsInit();
 
@@ -797,7 +733,6 @@ projectsToAboutBtn.addEventListener("click", function () {
   currentPage1Var = ".slide--about";
   currentPage1Const = document.querySelector(`${currentPage1Var}`);
   currentPage1Const.classList.remove("inactive");
-  // slideHomeProjects.classList.remove("inactive");
 
   if (width.matches) {
     slide.forEach((i) => i.classList.add("inactive"));
@@ -835,7 +770,6 @@ projectsToContactBtn.addEventListener("click", function () {
   currentPage1Var = ".slide--contact";
   currentPage1Const = document.querySelector(`${currentPage1Var}`);
   currentPage1Const.classList.remove("inactive");
-  // slideHomeProjects.classList.remove("inactive");
 
   if (width.matches) {
     slide.forEach((i) => i.classList.add("inactive"));
@@ -932,7 +866,6 @@ aboutToHomeBtn.addEventListener("click", function () {
       slideHomeAbout.classList.remove("inactive");
       slideHomeProjects.classList.remove("inactive");
       currentPage1Const.classList.remove("inactive");
-      // homeLoaded();
     }
 
     slideHome.classList.remove("trans-3s");
@@ -962,7 +895,6 @@ aboutToProjectsBtn.addEventListener("click", function () {
     currentPage1Var = ".slide--projects";
     currentPage1Const = document.querySelector(`${currentPage1Var}`);
     currentPage1Const.classList.remove("inactive");
-    // slideHomeProjects.classList.remove("inactive");
 
     if (width.matches) {
       slide.forEach((i) => i.classList.add("inactive"));
@@ -1002,7 +934,6 @@ aboutToContactBtn.addEventListener("click", function () {
     currentPage1Var = ".slide--contact";
     currentPage1Const = document.querySelector(`${currentPage1Var}`);
     currentPage1Const.classList.remove("inactive");
-    // slideHomeProjects.classList.remove("inactive");
 
     if (width.matches) {
       slide.forEach((i) => i.classList.add("inactive"));
@@ -1059,7 +990,6 @@ contactToHomeBtn.addEventListener("click", function () {
       slideHomeAbout.classList.remove("inactive");
       slideHomeProjects.classList.remove("inactive");
       currentPage1Const.classList.remove("inactive");
-      // homeLoaded();
     }
 
     slideHome.classList.remove("trans-3s");
@@ -1086,7 +1016,6 @@ contactToProjectsBtn.addEventListener("click", function () {
     currentPage1Var = ".slide--projects";
     currentPage1Const = document.querySelector(`${currentPage1Var}`);
     currentPage1Const.classList.remove("inactive");
-    // slideHomeProjects.classList.remove("inactive");
 
     if (width.matches) {
       slide.forEach((i) => i.classList.add("inactive"));
@@ -1123,7 +1052,6 @@ contactToAboutBtn.addEventListener("click", function () {
     currentPage1Var = ".slide--about";
     currentPage1Const = document.querySelector(`${currentPage1Var}`);
     currentPage1Const.classList.remove("inactive");
-    // slideHomeProjects.classList.remove("inactive");
 
     if (width.matches) {
       slide.forEach((i) => i.classList.add("inactive"));
@@ -1149,11 +1077,6 @@ contactToAboutBtn.addEventListener("click", function () {
   }
 });
 
-// DIT WERKT DENK IK:
-// GEEF ALLE TABS INACTIVE EN MAAK DE ACTIVE TAB ACTIVE
-// DAN VANAF 624 PIXELS MAAK JE ALLE INACTIVE TABS DISPLAY = NONE
-// DAN KAN JE SCROLLEN ENABLEN.
-
 // MEDIA QUERIES
 
 const sectionProjectsReal = document.querySelector(".section-projects-real");
@@ -1171,11 +1094,6 @@ const onePageOff = function () {
 
 function query624(x) {
   if (width.matches) {
-    // If media query matches
-    // document.querySelectorAll(".inactive").style.display = "none";
-    // document.body.style.backgroundColor = "#fff";
-    // inactive.forEach((i) => (i.style.display = "none"));
-    // slide.forEach((i) => i.classList.add("inactive"));
     slideAbout.classList.add("inactive");
     slideProjects.classList.add("inactive");
     slideContact.classList.add("inactive");
@@ -1217,8 +1135,7 @@ const contactTabQuery = function (x) {
 
 const width = window.matchMedia("(max-width: 624px)");
 const width544 = window.matchMedia("(max-width: 544px)");
-query624(width); // Call listener function at run time
-// width.addListener(query624); // Attach listener function on state changes
+query624(width);
 
 contactTabQuery();
 
@@ -1236,11 +1153,6 @@ width.addEventListener("change", function (event) {
 
 width.addEventListener("change", function (event) {
   if (event.matches) {
-    // If media query matches
-    // document.querySelectorAll(".inactive").style.display = "none";
-    // document.body.style.backgroundColor = "#fff";
-    // inactive.forEach((i) => (i.style.display = "none"));
-    // slide.forEach((i) => i.classList.add("inactive"));
     slideAbout.classList.add("inactive");
     slideProjects.classList.add("inactive");
     slideContact.classList.add("inactive");
@@ -1333,29 +1245,3 @@ width544.addEventListener("change", function (event) {
     );
   }
 });
-
-// width.addEventListener("change", function (width) {
-//   if (width.matches) {
-//     sectionProjectsReal.style.height = "fit-content";
-//     sectionAbout.style.height = "fit-content";
-//     sectionContact.style.height = "fit-content";
-//   } else {
-//     sectionProjectsReal.style.height = "inherit";
-//     sectionAbout.style.height = "inherit";
-//     sectionContact.style.height = "inherit";
-//   }
-// });
-
-// const sectionBorderFit = function () {
-//   if (width.matches) {
-//     sectionProjectsReal.style.height = "fit-content";
-//     sectionAbout.style.height = "fit-content";
-//     sectionContact.style.height = "fit-content";
-//   } else {
-//     sectionProjectsReal.style.height = "inherit";
-//     sectionAbout.style.height = "inherit";
-//     sectionContact.style.height = "inherit";
-//   }
-// };
-
-// sectionBorderFit();

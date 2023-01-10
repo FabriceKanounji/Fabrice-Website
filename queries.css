@@ -68,7 +68,6 @@
 
   .heading-primary-hidden-home {
     opacity: 0;
-    /* margin-top: 5rem; */
     transition: all 4s;
     transform: translateY(5rem);
     animation: revealHeading 2s ease 3.2s forwards;
@@ -100,17 +99,6 @@
 
 /* 624 px */
 @media (max-width: 39em) {
-  /* Deze twee moeten op de een of andere manier alleen als je op de projects pagina zit of op contact of about.
-  
-  Sowieso met JS en ik denk met insertadjacent HTML*/
-  /* .section-projects-real {
-    height: fit-content;
-  }
-
-  .slider {
-    overflow: visible;
-  } */
-  /* ///////////////////////////// */
   .projects-heading-secondary {
     text-align: center;
     margin-bottom: 2.6rem;
@@ -235,7 +223,6 @@
     justify-self: center;
     padding-top: 0;
     padding-right: 0;
-    /* width: 50rem; */
   }
 
   .form-input {
