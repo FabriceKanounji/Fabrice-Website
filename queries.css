@@ -232,6 +232,63 @@
 
 /* 432 px */
 @media (max-width: 27em) {
+  .contact {
+    display: none;
+  }
+  /*
+
+  .home-nav-btn-contact,
+  .home-nav-btn-projects {
+    flex-wrap: wrap;
+  } */
+
+  .hero-projects-and-contact-btn {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .heading-secondary {
+    font-size: 4.2rem;
+  }
+
+  .hero-text-box {
+    align-self: center;
+    margin-top: 50%;
+  }
+
+  .hero {
+    flex-direction: column;
+    justify-content: inherit;
+    align-items: initial;
+  }
+
+  .projects {
+    writing-mode: horizontal-tb !important;
+    cursor: pointer;
+  }
+
+  .projects2 {
+    writing-mode: horizontal-tb !important;
+    cursor: pointer;
+  }
+
+  .contact {
+    writing-mode: horizontal-tb !important;
+    cursor: pointer;
+  }
+
+  .contact2 {
+    writing-mode: horizontal-tb !important;
+    cursor: pointer;
+    opacity: 1;
+    /* animation: revealBtn 1s;
+    animation-fill-mode: forwards; */
+  }
+
+  .turn {
+    transform: rotateZ(0deg);
+  }
+
   .form input,
   .form select {
     width: 28rem;
@@ -243,5 +300,19 @@
 
   .tab {
     padding: 1.25rem 1.5rem;
+  }
+}
+
+/* 336 px */
+@media (max-width: 21em) {
+  html {
+    font-size: 37.5%;
+  }
+}
+
+/* 320 px */
+@media (max-width: 20em) {
+  .heading-secondary {
+    font-size: 3.6rem;
   }
 }

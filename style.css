@@ -261,6 +261,7 @@ body {
 .contact2 {
   writing-mode: vertical-rl !important;
   cursor: pointer;
+  transition: all 2s;
 }
 
 .about {

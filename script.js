@@ -129,7 +129,6 @@ const homeLoaded = function () {
   textDisplay.innerHTML = `<span class="hoi">Hoi</span>, ik ben <span class="fabrice">Fabrice</span>.`;
   headingPrimaryHiddenHome.style.transition = "all 0s";
   homeNavBtn.style.animation = "revealBtn 0s ease 0s forwards;";
-  console.log("home loaded");
 };
 
 //////////////////////////////////////////////
@@ -220,8 +219,6 @@ projects.addEventListener("click", function () {
   currentPage1Const.classList.remove("inactive");
   slideHomeProjects.classList.remove("inactive");
 
-  console.log(currentPage1Const);
-
   sectionHomeProjects.style.visibility = "visible";
 
   setTimeout(() => {
@@ -249,8 +246,6 @@ projects2.addEventListener("click", function () {
   currentPage1Const = document.querySelector(`${currentPage1Var}`);
   currentPage1Const.classList.remove("inactive");
   slideHomeProjects.classList.remove("inactive");
-
-  console.log(currentPage1Const);
 
   sectionHomeProjects.style.visibility = "visible";
 
@@ -1107,10 +1102,7 @@ function query624(x) {
       slide.forEach((i) => i.classList.add("inactive"));
       currentPage1Const.classList.remove("inactive");
       onePage();
-      console.log(currentPage1Var);
     }
-
-    console.log("hey");
   } else {
     slide.forEach((i) => i.classList.remove("inactive"));
     onePageOff();
@@ -1166,10 +1158,7 @@ width.addEventListener("change", function (event) {
       slide.forEach((i) => i.classList.add("inactive"));
       currentPage1Const.classList.remove("inactive");
       onePage();
-      console.log(currentPage1Var);
     }
-
-    console.log("hey");
   } else {
     slide.forEach((i) => i.classList.remove("inactive"));
     onePageOff();
@@ -1244,4 +1233,587 @@ width544.addEventListener("change", function (event) {
       (e) => (e.style.transform = "scale(1) translate(10rem, 0rem)")
     );
   }
+});
+
+window.addEventListener("resize", function () {
+  if (window.matchMedia("(max-width: 432px)").matches) {
+    sectionHeroLoaded.innerHTML = `<div class="hero-grid">
+    <div class="hero">
+      <div class="hero-projects-and-contact-btn">
+      <div class="home-nav-btn-loaded home-nav-btn-projects">
+        <h2 class="heading-secondary projects2">Projects</h2>
+      </div>
+
+      <div class="home-nav-btn-loaded home-nav-btn-contact">
+        <h2 class="heading-secondary contact2 turn">Contact</h2>
+      </div>
+
+    </div>
+
+      <div class="hero-text-box">
+        <h1 class="heading-primary margbot"><span class="hoi2">Hoi</span>, ik ben <span class="fabrice2">Fabrice</span>.</h1>
+        <h1 class="heading-primary heading-primary-hidden-home-loaded big">
+          Welkom op mijn <span class="portfolio2">portfolio</span>
+        </h1>
+      </div>
+    </div>
+    <div class="hero-2">
+      <div class="home-nav-btn-loaded">
+        <h2 class="heading-secondary about2">About</h2>
+      </div>
+    </div>
+  </div>`;
+
+    document.querySelectorAll(".projects2").forEach((element) => {
+      element.addEventListener("click", function () {
+        currentPage1Var = ".slide--projects";
+        currentPage1Const = document.querySelector(`${currentPage1Var}`);
+        currentPage1Const.classList.remove("inactive");
+        slideHomeProjects.classList.remove("inactive");
+
+        sectionHomeProjects.style.visibility = "visible";
+
+        setTimeout(() => {
+          slideHome.style.transform = "translateX(100%)";
+          slideHomeProjects.style.transform = "translateX(0)";
+        }, 100);
+
+        homeProjectsTextAnimation();
+
+        setTimeout(toProjects, 3000);
+
+        setTimeout(() => {
+          if (width.matches) {
+            slide.forEach((i) => i.classList.add("inactive"));
+            slideProjects.classList.remove("inactive");
+            onePage();
+          }
+        }, 6100);
+
+        setTimeout(projectsAnimation, 6100);
+      });
+    });
+
+    document.querySelectorAll(".about2").forEach((element) => {
+      element.addEventListener("click", function () {
+        currentPage1Var = ".slide--about";
+        currentPage1Const = document.querySelector(`${currentPage1Var}`);
+        currentPage1Const.classList.remove("inactive");
+        slideHomeAbout.classList.remove("inactive");
+        slideHome.style.transform = "translateY(-100%)";
+        slideHomeAbout.style.transform = "translateY(0)";
+
+        homeProjectsTextAnimation();
+
+        setTimeout(toAbout, 3000);
+
+        setTimeout(() => {
+          if (width.matches) {
+            slide.forEach((i) => i.classList.add("inactive"));
+            slideAbout.classList.remove("inactive");
+            onePage();
+            failsafe = 1;
+          } else {
+            failsafe = 1;
+          }
+        }, 6100);
+      });
+    });
+
+    document.querySelectorAll(".contact2").forEach((element) => {
+      element.addEventListener("click", function () {
+        currentPage1Var = ".slide--contact";
+        currentPage1Const = document.querySelector(`${currentPage1Var}`);
+        currentPage1Const.classList.remove("inactive");
+
+        setTimeout(() => {
+          slideHome.style.transform = "translateX(-100%)";
+          slideContact.style.transform = "translateX(0)";
+        }, 10);
+
+        setTimeout(() => {
+          if (width.matches) {
+            slide.forEach((i) => i.classList.add("inactive"));
+            slideContact.classList.remove("inactive");
+            onePage();
+            failsafe = 1;
+          } else {
+            failsafe = 1;
+          }
+        }, 3000);
+      });
+    });
+  } else {
+    sectionHeroLoaded.innerHTML = `<div class="hero-grid">
+    <div class="hero">
+      <div class="home-nav-btn-loaded home-nav-btn-projects">
+        <h2 class="heading-secondary projects2">Projects</h2>
+      </div>
+
+      <div class="hero-text-box">
+        <h1 class="heading-primary margbot"><span class="hoi2">Hoi</span>, ik ben <span class="fabrice2">Fabrice</span>.</h1>
+        <h1 class="heading-primary heading-primary-hidden-home-loaded big">
+          Welkom op mijn <span class="portfolio2">portfolio</span>
+        </h1>
+      </div>
+      <div class="home-nav-btn-loaded home-nav-btn-contact">
+        <h2 class="heading-secondary contact2 turn">Contact</h2>
+      </div>
+    </div>
+    <div class="hero-2">
+      <div class="home-nav-btn-loaded">
+        <h2 class="heading-secondary about2">About</h2>
+      </div>
+    </div>
+  </div>`;
+  }
+  document.querySelectorAll(".projects2").forEach((element) => {
+    element.addEventListener("click", function () {
+      currentPage1Var = ".slide--projects";
+      currentPage1Const = document.querySelector(`${currentPage1Var}`);
+      currentPage1Const.classList.remove("inactive");
+      slideHomeProjects.classList.remove("inactive");
+
+      sectionHomeProjects.style.visibility = "visible";
+
+      setTimeout(() => {
+        slideHome.style.transform = "translateX(100%)";
+        slideHomeProjects.style.transform = "translateX(0)";
+      }, 100);
+
+      homeProjectsTextAnimation();
+
+      setTimeout(toProjects, 3000);
+
+      setTimeout(() => {
+        if (width.matches) {
+          slide.forEach((i) => i.classList.add("inactive"));
+          slideProjects.classList.remove("inactive");
+          onePage();
+        }
+      }, 6100);
+
+      setTimeout(projectsAnimation, 6100);
+    });
+  });
+
+  document.querySelectorAll(".about2").forEach((element) => {
+    element.addEventListener("click", function () {
+      currentPage1Var = ".slide--about";
+      currentPage1Const = document.querySelector(`${currentPage1Var}`);
+      currentPage1Const.classList.remove("inactive");
+      slideHomeAbout.classList.remove("inactive");
+      slideHome.style.transform = "translateY(-100%)";
+      slideHomeAbout.style.transform = "translateY(0)";
+
+      homeProjectsTextAnimation();
+
+      setTimeout(toAbout, 3000);
+
+      setTimeout(() => {
+        if (width.matches) {
+          slide.forEach((i) => i.classList.add("inactive"));
+          slideAbout.classList.remove("inactive");
+          onePage();
+          failsafe = 1;
+        } else {
+          failsafe = 1;
+        }
+      }, 6100);
+    });
+  });
+
+  document.querySelectorAll(".contact2").forEach((element) => {
+    element.addEventListener("click", function () {
+      currentPage1Var = ".slide--contact";
+      currentPage1Const = document.querySelector(`${currentPage1Var}`);
+      currentPage1Const.classList.remove("inactive");
+
+      setTimeout(() => {
+        slideHome.style.transform = "translateX(-100%)";
+        slideContact.style.transform = "translateX(0)";
+      }, 10);
+
+      setTimeout(() => {
+        if (width.matches) {
+          slide.forEach((i) => i.classList.add("inactive"));
+          slideContact.classList.remove("inactive");
+          onePage();
+          failsafe = 1;
+        } else {
+          failsafe = 1;
+        }
+      }, 3000);
+    });
+  });
+});
+
+if (window.matchMedia("(max-width: 432px)").matches) {
+  sectionHeroLoaded.innerHTML = `<div class="hero-grid">
+  <div class="hero">
+    <div class="hero-projects-and-contact-btn">
+    <div class="home-nav-btn-loaded home-nav-btn-projects">
+      <h2 class="heading-secondary projects2">Projects</h2>
+    </div>
+
+    <div class="home-nav-btn-loaded home-nav-btn-contact">
+      <h2 class="heading-secondary contact2 turn">Contact</h2>
+    </div>
+
+  </div>
+
+    <div class="hero-text-box">
+      <h1 class="heading-primary margbot"><span class="hoi2">Hoi</span>, ik ben <span class="fabrice2">Fabrice</span>.</h1>
+      <h1 class="heading-primary heading-primary-hidden-home-loaded big">
+        Welkom op mijn <span class="portfolio2">portfolio</span>
+      </h1>
+    </div>
+  </div>
+  <div class="hero-2">
+    <div class="home-nav-btn-loaded">
+      <h2 class="heading-secondary about2">About</h2>
+    </div>
+  </div>
+</div>`;
+  document.querySelectorAll(".projects2").forEach((element) => {
+    element.addEventListener("click", function () {
+      currentPage1Var = ".slide--projects";
+      currentPage1Const = document.querySelector(`${currentPage1Var}`);
+      currentPage1Const.classList.remove("inactive");
+      slideHomeProjects.classList.remove("inactive");
+
+      sectionHomeProjects.style.visibility = "visible";
+
+      setTimeout(() => {
+        slideHome.style.transform = "translateX(100%)";
+        slideHomeProjects.style.transform = "translateX(0)";
+      }, 100);
+
+      homeProjectsTextAnimation();
+
+      setTimeout(toProjects, 3000);
+
+      setTimeout(() => {
+        if (width.matches) {
+          slide.forEach((i) => i.classList.add("inactive"));
+          slideProjects.classList.remove("inactive");
+          onePage();
+        }
+      }, 6100);
+
+      setTimeout(projectsAnimation, 6100);
+    });
+  });
+
+  document.querySelectorAll(".about2").forEach((element) => {
+    element.addEventListener("click", function () {
+      currentPage1Var = ".slide--about";
+      currentPage1Const = document.querySelector(`${currentPage1Var}`);
+      currentPage1Const.classList.remove("inactive");
+      slideHomeAbout.classList.remove("inactive");
+      slideHome.style.transform = "translateY(-100%)";
+      slideHomeAbout.style.transform = "translateY(0)";
+
+      homeProjectsTextAnimation();
+
+      setTimeout(toAbout, 3000);
+
+      setTimeout(() => {
+        if (width.matches) {
+          slide.forEach((i) => i.classList.add("inactive"));
+          slideAbout.classList.remove("inactive");
+          onePage();
+          failsafe = 1;
+        } else {
+          failsafe = 1;
+        }
+      }, 6100);
+    });
+  });
+
+  document.querySelectorAll(".contact2").forEach((element) => {
+    element.addEventListener("click", function () {
+      currentPage1Var = ".slide--contact";
+      currentPage1Const = document.querySelector(`${currentPage1Var}`);
+      currentPage1Const.classList.remove("inactive");
+
+      setTimeout(() => {
+        slideHome.style.transform = "translateX(-100%)";
+        slideContact.style.transform = "translateX(0)";
+      }, 10);
+
+      setTimeout(() => {
+        if (width.matches) {
+          slide.forEach((i) => i.classList.add("inactive"));
+          slideContact.classList.remove("inactive");
+          onePage();
+          failsafe = 1;
+        } else {
+          failsafe = 1;
+        }
+      }, 3000);
+    });
+  });
+} else {
+  sectionHeroLoaded.innerHTML = `<div class="hero-grid">
+  <div class="hero">
+    <div class="home-nav-btn-loaded home-nav-btn-projects">
+      <h2 class="heading-secondary projects2">Projects</h2>
+    </div>
+
+    <div class="hero-text-box">
+      <h1 class="heading-primary margbot"><span class="hoi2">Hoi</span>, ik ben <span class="fabrice2">Fabrice</span>.</h1>
+      <h1 class="heading-primary heading-primary-hidden-home-loaded big">
+        Welkom op mijn <span class="portfolio2">portfolio</span>
+      </h1>
+    </div>
+    <div class="home-nav-btn-loaded home-nav-btn-contact">
+      <h2 class="heading-secondary contact2 turn">Contact</h2>
+    </div>
+  </div>
+  <div class="hero-2">
+    <div class="home-nav-btn-loaded">
+      <h2 class="heading-secondary about2">About</h2>
+    </div>
+  </div>
+</div>`;
+  document.querySelectorAll(".projects2").forEach((element) => {
+    element.addEventListener("click", function () {
+      currentPage1Var = ".slide--projects";
+      currentPage1Const = document.querySelector(`${currentPage1Var}`);
+      currentPage1Const.classList.remove("inactive");
+      slideHomeProjects.classList.remove("inactive");
+
+      sectionHomeProjects.style.visibility = "visible";
+
+      setTimeout(() => {
+        slideHome.style.transform = "translateX(100%)";
+        slideHomeProjects.style.transform = "translateX(0)";
+      }, 100);
+
+      homeProjectsTextAnimation();
+
+      setTimeout(toProjects, 3000);
+
+      setTimeout(() => {
+        if (width.matches) {
+          slide.forEach((i) => i.classList.add("inactive"));
+          slideProjects.classList.remove("inactive");
+          onePage();
+        }
+      }, 6100);
+
+      setTimeout(projectsAnimation, 6100);
+    });
+  });
+
+  document.querySelectorAll(".about2").forEach((element) => {
+    element.addEventListener("click", function () {
+      currentPage1Var = ".slide--about";
+      currentPage1Const = document.querySelector(`${currentPage1Var}`);
+      currentPage1Const.classList.remove("inactive");
+      slideHomeAbout.classList.remove("inactive");
+      slideHome.style.transform = "translateY(-100%)";
+      slideHomeAbout.style.transform = "translateY(0)";
+
+      homeProjectsTextAnimation();
+
+      setTimeout(toAbout, 3000);
+
+      setTimeout(() => {
+        if (width.matches) {
+          slide.forEach((i) => i.classList.add("inactive"));
+          slideAbout.classList.remove("inactive");
+          onePage();
+          failsafe = 1;
+        } else {
+          failsafe = 1;
+        }
+      }, 6100);
+    });
+  });
+
+  document.querySelectorAll(".contact2").forEach((element) => {
+    element.addEventListener("click", function () {
+      currentPage1Var = ".slide--contact";
+      currentPage1Const = document.querySelector(`${currentPage1Var}`);
+      currentPage1Const.classList.remove("inactive");
+
+      setTimeout(() => {
+        slideHome.style.transform = "translateX(-100%)";
+        slideContact.style.transform = "translateX(0)";
+      }, 10);
+
+      setTimeout(() => {
+        if (width.matches) {
+          slide.forEach((i) => i.classList.add("inactive"));
+          slideContact.classList.remove("inactive");
+          onePage();
+          failsafe = 1;
+        } else {
+          failsafe = 1;
+        }
+      }, 3000);
+    });
+  });
+}
+
+document.querySelectorAll(".projects2").forEach((element) => {
+  element.addEventListener("click", function () {
+    currentPage1Var = ".slide--projects";
+    currentPage1Const = document.querySelector(`${currentPage1Var}`);
+    currentPage1Const.classList.remove("inactive");
+    slideHomeProjects.classList.remove("inactive");
+
+    sectionHomeProjects.style.visibility = "visible";
+
+    setTimeout(() => {
+      slideHome.style.transform = "translateX(100%)";
+      slideHomeProjects.style.transform = "translateX(0)";
+    }, 100);
+
+    homeProjectsTextAnimation();
+
+    setTimeout(toProjects, 3000);
+
+    setTimeout(() => {
+      if (width.matches) {
+        slide.forEach((i) => i.classList.add("inactive"));
+        slideProjects.classList.remove("inactive");
+        onePage();
+      }
+    }, 6100);
+
+    setTimeout(projectsAnimation, 6100);
+  });
+});
+
+document.querySelectorAll(".about2").forEach((element) => {
+  element.addEventListener("click", function () {
+    currentPage1Var = ".slide--about";
+    currentPage1Const = document.querySelector(`${currentPage1Var}`);
+    currentPage1Const.classList.remove("inactive");
+    slideHomeAbout.classList.remove("inactive");
+    slideHome.style.transform = "translateY(-100%)";
+    slideHomeAbout.style.transform = "translateY(0)";
+
+    homeProjectsTextAnimation();
+
+    setTimeout(toAbout, 3000);
+
+    setTimeout(() => {
+      if (width.matches) {
+        slide.forEach((i) => i.classList.add("inactive"));
+        slideAbout.classList.remove("inactive");
+        onePage();
+        failsafe = 1;
+      } else {
+        failsafe = 1;
+      }
+    }, 6100);
+  });
+});
+
+document.querySelectorAll(".contact2").forEach((element) => {
+  element.addEventListener("click", function () {
+    currentPage1Var = ".slide--contact";
+    currentPage1Const = document.querySelector(`${currentPage1Var}`);
+    currentPage1Const.classList.remove("inactive");
+
+    setTimeout(() => {
+      slideHome.style.transform = "translateX(-100%)";
+      slideContact.style.transform = "translateX(0)";
+    }, 10);
+
+    setTimeout(() => {
+      if (width.matches) {
+        slide.forEach((i) => i.classList.add("inactive"));
+        slideContact.classList.remove("inactive");
+        onePage();
+        failsafe = 1;
+      } else {
+        failsafe = 1;
+      }
+    }, 3000);
+  });
+});
+
+document.querySelectorAll(".projects").forEach((element) => {
+  element.addEventListener("click", function () {
+    currentPage1Var = ".slide--projects";
+    currentPage1Const = document.querySelector(`${currentPage1Var}`);
+    currentPage1Const.classList.remove("inactive");
+    slideHomeProjects.classList.remove("inactive");
+
+    sectionHomeProjects.style.visibility = "visible";
+
+    setTimeout(() => {
+      slideHome.style.transform = "translateX(100%)";
+      slideHomeProjects.style.transform = "translateX(0)";
+    }, 100);
+
+    homeProjectsTextAnimation();
+
+    setTimeout(toProjects, 3000);
+
+    setTimeout(() => {
+      if (width.matches) {
+        slide.forEach((i) => i.classList.add("inactive"));
+        slideProjects.classList.remove("inactive");
+        onePage();
+      }
+    }, 6100);
+
+    setTimeout(projectsAnimation, 6100);
+  });
+});
+
+document.querySelectorAll(".about").forEach((element) => {
+  element.addEventListener("click", function () {
+    currentPage1Var = ".slide--about";
+    currentPage1Const = document.querySelector(`${currentPage1Var}`);
+    currentPage1Const.classList.remove("inactive");
+    slideHomeAbout.classList.remove("inactive");
+    slideHome.style.transform = "translateY(-100%)";
+    slideHomeAbout.style.transform = "translateY(0)";
+
+    homeProjectsTextAnimation();
+
+    setTimeout(toAbout, 3000);
+
+    setTimeout(() => {
+      if (width.matches) {
+        slide.forEach((i) => i.classList.add("inactive"));
+        slideAbout.classList.remove("inactive");
+        onePage();
+        failsafe = 1;
+      } else {
+        failsafe = 1;
+      }
+    }, 5800);
+  });
+});
+
+document.querySelectorAll(".contact").forEach((element) => {
+  element.addEventListener("click", function () {
+    currentPage1Var = ".slide--contact";
+    currentPage1Const = document.querySelector(`${currentPage1Var}`);
+    currentPage1Const.classList.remove("inactive");
+
+    setTimeout(() => {
+      slideHome.style.transform = "translateX(-100%)";
+      slideContact.style.transform = "translateX(0)";
+    }, 10);
+
+    setTimeout(() => {
+      if (width.matches) {
+        slide.forEach((i) => i.classList.add("inactive"));
+        slideContact.classList.remove("inactive");
+        onePage();
+        failsafe = 1;
+      } else {
+        failsafe = 1;
+      }
+    }, 3000);
+  });
 });
